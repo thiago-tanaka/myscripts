@@ -1,0 +1,9 @@
+#!/bin/bash
+apt update;
+dpkg -l | grep php | tee packages.txt;
+echo "installing php...";
+add-apt-repository -y ppa:ondrej/php;
+apt update;
+apt install -y php8.2 php8.2-cli php8.2-{bz2,curl,mbstring,intl};
+
+apt install -y php8.2-fpm;
